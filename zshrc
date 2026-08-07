@@ -41,7 +41,6 @@ alias vim='nvim'
 alias vi='nvim'
 alias mux='tmuxinator'
 
-# ----- Machine-local secrets / host-specific aliases (NOT tracked) -----
-# Put API keys and project aliases in ~/.zsh_secrets (gitignored everywhere).
-# It is sourced automatically when present, so each host keeps its own.
+# ----- Machine-local configuration and secrets (NOT tracked) -----
+[[ -f "$HOME/.zsh_local" ]] && source "$HOME/.zsh_local"
 [[ -f "$HOME/.zsh_secrets" ]] && source "$HOME/.zsh_secrets"
