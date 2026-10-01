@@ -1,0 +1,14 @@
+apiVersion: pds/v1alpha1
+kind: Component
+metadata:
+  id: zsh-config
+  name: Zsh Config
+spec:
+  type: software-config
+  domain: personal-config
+  lifecycle: active
+  repository:
+    url: https://github.com/BakerSean168/zsh-config.git
+    visibility: private
+  provides:
+    - pds://personal-config/config/zsh

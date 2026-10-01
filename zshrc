@@ -1,6 +1,6 @@
 # ============================================================
 #  Unified zsh configuration  (managed via dotfiles repo)
-#  Source of truth: github.com/BakerSean168/dotfiles
+#  Source of truth: github.com/BakerSean168/zsh-config
 #  Merged from the WSL + DO-bodysense setups.
 # ============================================================
 
