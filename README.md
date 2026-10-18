@@ -22,6 +22,18 @@ git pull --ff-only
 
 No reinstall is required while `~/.zshrc` remains a symlink.
 
+## Development toolchains
+
+When mise is installed, zshrc activates it automatically. Go, Node.js,
+pnpm and other runtime versions belong to the host's
+~/.config/mise/config.toml or the project's mise.toml, not this shared Zsh
+repository. Hosts that do not use mise retain guarded Go/NVM fallback paths.
+Keep machine-specific additions in ~/.zsh_local.
+
+WSL uses the personal-config wsl-dev profile to compose this repository with
+Tmux and Neovim. The historical dotfiles repository is archived and should
+not receive new changes.
+
 ## Local boundaries
 
 - `~/.zsh_local`: non-secret, machine-specific PATH additions and aliases.

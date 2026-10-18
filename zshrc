@@ -19,15 +19,21 @@ export VISUAL='nvim'
 [ -d /opt/nvim-linux-x86_64/bin ] && export PATH="/opt/nvim-linux-x86_64/bin:$PATH"
 [ -d /opt/nvim-linux64/bin ]      && export PATH="/opt/nvim-linux64/bin:$PATH"
 [ -d /opt/nvim-linux-arm64/bin ]  && export PATH="/opt/nvim-linux-arm64/bin:$PATH"
-# Go
-[ -d /usr/local/go/bin ] && export PATH="$PATH:/usr/local/go/bin"
-[ -d "$HOME/go/bin" ]     && export PATH="$PATH:$HOME/go/bin"
+# Development toolchains. The host/project owns version selection;
+# this portable shell config only activates mise when it is installed.
+export PATH="$HOME/.local/bin:$PATH"
+if command -v mise >/dev/null 2>&1; then
+  eval "$(mise activate zsh)"
+else
+  # Compatibility for hosts that have not migrated to mise.
+  [ -d /usr/local/go/bin ] && export PATH="$PATH:/usr/local/go/bin"
+  [ -d "$HOME/go/bin" ] && export PATH="$PATH:$HOME/go/bin"
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
+fi
 # Python uv
 [ -f "$HOME/.local/bin/env" ] && source "$HOME/.local/bin/env"
-# Node (nvm)
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ]          && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 # opencode
 [ -d "$HOME/.opencode/bin" ] && export PATH="$HOME/.opencode/bin:$PATH"
 
