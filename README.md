@@ -7,7 +7,7 @@ This repository owns the Zsh configuration itself. Host selection/composition be
 ## Install directly
 
 ```bash
-git clone git@github.com:BakerSean168/zsh-config.git ~/.config/zsh-config
+git clone https://github.com/BakerSean168/zsh-config.git ~/.config/zsh-config
 ~/.config/zsh-config/install.sh
 ```
 
@@ -39,3 +39,14 @@ not receive new changes.
 - `~/.zsh_local`: non-secret, machine-specific PATH additions and aliases.
 - `~/.zsh_secrets`: API keys/tokens and other secrets; never committed.
 - This repository does not own system package installation, Neovim configuration, SSH server policy, or host inventory.
+
+## Reuse and privacy
+
+This repository contains a reusable Zsh setup, not machine credentials. Install
+[Oh My Zsh](https://ohmyz.sh/) and the referenced plugins separately if needed.
+Keep local PATH/aliases in `~/.zsh_local` and tokens in `~/.zsh_secrets`;
+neither file should be committed. `zsh_local.example` and
+`zsh_secrets.example` are intentionally placeholders. Installation backs up an
+existing `~/.zshrc` before switching it to this checkout.
+
+Licensed under [MIT](LICENSE).
